@@ -1,2 +1,2 @@
 # list-gists
-List Gists of user
+List the Gists of user in a single HTML page.
