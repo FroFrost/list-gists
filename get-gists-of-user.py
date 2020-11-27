@@ -8,7 +8,7 @@ username = 'linuxkathirvel'
 gists_url = 'https://api.github.com/users/{}/gists'.format(username)
 # Results per page (max 100)
 per_page = 100
-# Page number of the results to fetch.
+# Page number to fetch the results.
 page = 1001
 # Headers values
 headers = {
@@ -17,6 +17,7 @@ headers = {
 # Parameters to GET method
 payload = {'per_page': per_page,}
 
+# To store gist details
 gists_list = []
 
 for page_number in range(1, page):
@@ -54,8 +55,6 @@ else:
 context['gists'] = gists_list
 
 output = template.render(data=context)
-print(output)
-print(type(output))
 # Write the template in separate HTML
 with open('gists-output.html', 'w') as f:
     f.write(output)
