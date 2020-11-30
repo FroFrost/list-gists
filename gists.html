@@ -12,20 +12,11 @@
 
 <div class="container">
   <h2><a href="{{ data.gists_url_of_user }}" target="_blank">{{ data.username }}'s Gists</a></h2>
-  <table class="table table-condensed table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>Gist</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="list-group">
       {% for gist in data.gists %}
-      <tr>
-        <td><a href="{{ gist.html_url }}" target="_blank">{{ gist.description }}</a></td>
-      </tr>
+      <a href="{{ gist.html_url }}" target="_blank" class="list-group-item" style="color: black;">{{ loop.revindex }}. {{ gist.description }}</a>
       {% endfor %}
-    </tbody>
-  </table>
+  </div>
 </div>
 
 </body>
