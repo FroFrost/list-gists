@@ -27,6 +27,7 @@ for page_number in range(1, page):
         gists = r.json()
         if gists:
             for gist in gists:
+                print(gist)
                 gists_list.append(
                     {
                         'html_url': gist.get('html_url'),
